@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <!-- Center Point (250, 250) -->
+  <defs>
+    <!-- Facet Petal Definition -->
+    <g id="petal">
+      <!-- Outer Hexagonal Rhombus Facet -->
+      <polygon points="250,55 295,115 250,175 205,115" fill="#05624C" stroke="#D5B581" stroke-width="2.5" />
+      <!-- Inner Facet Curve Lines -->
+      <path d="M 205,115 Q 250,145 295,115" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.85" />
+      <path d="M 250,55 L 250,175" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4" />
+    </g>
+  </defs>
+
+  <!-- 6 Rotated Petals around 250, 250 -->
+  <use href="#petal" />
+  <use href="#petal" transform="rotate(60, 250, 250)" />
+  <use href="#petal" transform="rotate(120, 250, 250)" />
+  <use href="#petal" transform="rotate(180, 250, 250)" />
+  <use href="#petal" transform="rotate(240, 250, 250)" />
+  <use href="#petal" transform="rotate(300, 250, 250)" />
+
+  <!-- Center Diamond Sparkle -->
+  <path d="M 250,225 Q 250,250 225,250 Q 250,250 250,275 Q 250,250 275,250 Q 250,250 250,225 Z" fill="#05624C" stroke="#D5B581" stroke-width="1.5" />
+</svg>
