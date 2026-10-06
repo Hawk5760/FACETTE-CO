@@ -41,17 +41,17 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-[#090C0E]/90 backdrop-blur-md border-b border-[#D5B581]/20 py-4 shadow-lg shadow-black/40'
-          : 'bg-gradient-to-b from-[#090C0E]/90 via-[#090C0E]/50 to-transparent py-6 border-b border-[#D5B581]/10'
+          ? 'bg-[#090C0E]/75 backdrop-blur-md border-b border-[#D5B581]/20 py-3 sm:py-3.5 shadow-lg shadow-black/30'
+          : 'bg-gradient-to-b from-black/50 via-black/15 to-transparent py-4 sm:py-4.5 xl:py-5 border-b border-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div className="max-w-[1540px] mx-auto px-4 sm:px-6 lg:px-6 xl:px-10 2xl:px-12 flex items-center justify-between">
         {/* Brand Logo with Emblem */}
         <Link
           to="/"
-          className="group flex items-center gap-3 tracking-[0.25em] text-[#E9E4DC] hover:text-[#D5B581] transition-colors"
+          className="group flex items-center gap-2.5 sm:gap-3 tracking-[0.2em] text-[#E9E4DC] hover:text-[#D5B581] transition-colors flex-shrink-0"
         >
-          <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 flex-shrink-0 flex items-center justify-center p-0.5">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-9 lg:h-9 xl:w-10 xl:h-10 flex-shrink-0 flex items-center justify-center p-0.5">
             <img
               src="/assets/facette-emblem.png"
               alt="Facette & Co Emblem"
@@ -59,17 +59,17 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col items-start">
-            <span className="font-serif text-base sm:text-lg md:text-xl font-light uppercase tracking-[0.25em] sm:tracking-[0.3em] leading-tight text-[#E9E4DC] group-hover:text-[#D5B581] transition-colors">
+            <span className="font-serif text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-xl font-light uppercase tracking-[0.2em] sm:tracking-[0.25em] xl:tracking-[0.3em] leading-tight text-[#E9E4DC] group-hover:text-[#D5B581] transition-colors whitespace-nowrap drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
               FACETTE &amp; CO
             </span>
-            <span className="text-[8px] sm:text-[9px] tracking-[0.3em] sm:tracking-[0.35em] text-[#D5B581]/80 uppercase font-sans font-light">
+            <span className="text-[7.5px] sm:text-[8px] xl:text-[9px] tracking-[0.25em] sm:tracking-[0.3em] xl:tracking-[0.35em] text-[#D5B581]/90 uppercase font-sans font-light whitespace-nowrap drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
               ATELIER &bull; SOURCING
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-8 text-[12px] font-sans tracking-[0.18em] uppercase text-[#E9E4DC]/80 font-normal">
+        <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6 2xl:gap-8 text-[11px] xl:text-[12px] font-sans tracking-[0.12em] xl:tracking-[0.16em] uppercase text-[#E9E4DC] font-normal mx-2 xl:mx-4">
           {/* Gemstones with hover dropdown */}
           <div
             className="relative"
@@ -78,7 +78,7 @@ export default function Navbar() {
           >
             <Link
               to="/gemstones"
-              className={`flex items-center gap-1.5 py-2 transition-colors ${
+              className={`flex items-center gap-1.5 py-2 transition-colors whitespace-nowrap drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] ${
                 location.pathname.startsWith('/gemstones') ||
                 location.pathname === '/emeralds' ||
                 location.pathname === '/sapphires' ||
@@ -88,12 +88,12 @@ export default function Navbar() {
               }`}
             >
               Gemstones
-              <ChevronDown className="w-3 h-3 text-[#D5B581]/60" />
+              <ChevronDown className="w-3 h-3 text-[#D5B581]/70" />
             </Link>
 
             {/* Dropdown Menu */}
             {gemstonesDropdown && (
-              <div className="absolute top-full left-0 w-72 bg-[#0E1318]/95 backdrop-blur-xl border border-[#D5B581]/20 p-3 shadow-2xl rounded-sm">
+              <div className="absolute top-full left-0 w-72 bg-[#0E1318]/95 backdrop-blur-xl border border-[#D5B581]/20 p-3 shadow-2xl rounded-sm z-50">
                 <div className="text-[10px] tracking-[0.2em] text-[#D5B581] font-semibold uppercase px-3 py-1.5 border-b border-[#D5B581]/15 mb-1.5">
                   Sourced To Specification
                 </div>
@@ -117,7 +117,7 @@ export default function Navbar() {
 
           <Link
             to="/jewellery"
-            className={`py-2 transition-colors ${
+            className={`py-2 transition-colors whitespace-nowrap drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] ${
               location.pathname === '/jewellery' ? 'text-[#D5B581]' : 'hover:text-[#D5B581]'
             }`}
           >
@@ -126,7 +126,7 @@ export default function Navbar() {
 
           <Link
             to="/fashion-hardware"
-            className={`py-2 transition-colors ${
+            className={`py-2 transition-colors whitespace-nowrap drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] ${
               location.pathname === '/fashion-hardware' ? 'text-[#D5B581]' : 'hover:text-[#D5B581]'
             }`}
           >
@@ -135,7 +135,7 @@ export default function Navbar() {
 
           <Link
             to="/corporate-gifting"
-            className={`py-2 transition-colors ${
+            className={`py-2 transition-colors whitespace-nowrap drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] ${
               location.pathname === '/corporate-gifting' ? 'text-[#D5B581]' : 'hover:text-[#D5B581]'
             }`}
           >
@@ -144,7 +144,7 @@ export default function Navbar() {
 
           <Link
             to="/about-us"
-            className={`py-2 transition-colors ${
+            className={`py-2 transition-colors whitespace-nowrap drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)] ${
               location.pathname === '/about-us' ? 'text-[#D5B581]' : 'hover:text-[#D5B581]'
             }`}
           >
@@ -153,10 +153,10 @@ export default function Navbar() {
         </nav>
 
         {/* Right Action: Enquire Button */}
-        <div className="hidden lg:flex items-center space-x-6">
+        <div className="hidden lg:flex items-center flex-shrink-0">
           <Link
             to="/contact"
-            className="border border-[#D5B581]/50 px-5 py-2 text-[11px] font-sans uppercase tracking-[0.2em] text-[#E9E4DC] hover:text-[#090C0E] hover:bg-[#D5B581] transition-all duration-300"
+            className="border border-[#D5B581]/60 bg-black/25 hover:bg-[#D5B581] hover:text-[#090C0E] px-4 xl:px-5 py-1.5 xl:py-2 text-[10px] xl:text-[11px] font-sans uppercase tracking-[0.16em] xl:tracking-[0.2em] text-[#E9E4DC] backdrop-blur-sm transition-all duration-300 whitespace-nowrap drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]"
           >
             Enquire
           </Link>

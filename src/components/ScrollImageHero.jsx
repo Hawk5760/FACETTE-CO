@@ -37,9 +37,9 @@ export default function ScrollImageHero() {
       badge: "THE LUXURY HOUSE",
       title: "FACETTE & CO.",
       subtitle: "Where exceptional materials meet uncompromising design — objects conceived with intent.",
-      image: "/assets/hero-facette-emblem.jpg",
-      alt: "Facette & Co Luxury Gold Hallmarked Emblem",
-      stepName: "THE ATELIER",
+      image: "/assets/hero-emerald-ring.jpg",
+      alt: "Facette & Co Bespoke Haute Joaillerie Emerald Ring",
+      stepName: "HAUTE JOAILLERIE",
       metadata: "GENEVA • DUBAI • MUMBAI • BESPOKE COMMISSIONS"
     },
   ];
@@ -264,12 +264,12 @@ export default function ScrollImageHero() {
         </div>
 
         {/* Layer 2: Subtle Cinematic Vignettes & Luxury Emerald Grading */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#090C0E] via-[#090C0E]/30 to-[#090C0E]/70 pointer-events-none z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#090C0E] via-[#090C0E]/20 to-transparent pointer-events-none z-10" />
         <div className="absolute inset-0 bg-radial from-transparent via-[#090C0E]/20 to-[#090C0E]/85 pointer-events-none z-10" />
         <div className="absolute inset-0 bg-[#0E3D3D]/10 mix-blend-overlay pointer-events-none z-10" />
 
         {/* Precision Crosshairs / Architectural Frame Elements */}
-        <div className="absolute inset-x-6 sm:inset-x-12 top-6 sm:top-10 bottom-6 sm:bottom-10 pointer-events-none z-20 border border-[#D5B581]/15 hidden md:block">
+        <div className="absolute inset-x-6 sm:inset-x-12 top-20 sm:top-24 bottom-6 sm:bottom-10 pointer-events-none z-20 border border-[#D5B581]/15 hidden md:block">
           <span className="absolute -top-1.5 -left-1.5 text-[#D5B581]/60 font-mono text-xs">+</span>
           <span className="absolute -top-1.5 -right-1.5 text-[#D5B581]/60 font-mono text-xs">+</span>
           <span className="absolute -bottom-1.5 -left-1.5 text-[#D5B581]/60 font-mono text-xs">+</span>
