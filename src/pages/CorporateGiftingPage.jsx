@@ -185,10 +185,10 @@ export default function CorporateGiftingPage() {
         </div>
       </section>
 
-      {/* Requirement Builder */}
+      {/* 05 — REQUIREMENT BUILDER (PDF 2, Page 10) */}
       <section id="builder" className="py-24 px-6 md:px-12 bg-[#090C0E]">
         <div className="max-w-7xl mx-auto">
-          <RequirementBuilder mode="manufacturing" />
+          <RequirementBuilder mode="gifting" />
         </div>
       </section>
 

@@ -34,7 +34,7 @@ export interface MetroHeroProps {
 const DEFAULT_VIDEO = "https://assets.mixkit.co/videos/42861/42861-720.mp4"
 const DEFAULT_SIGNATURE = { name: "FACETTE & CO", url: "/about-us" }
 const SANS = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-const SERIF = "'Cormorant Garamond', Georgia, serif"
+const SERIF = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
 
 const COL_BG = "#090C0E"
 const COL_TEXT = "#E9E4DC"

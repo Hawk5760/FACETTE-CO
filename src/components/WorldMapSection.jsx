@@ -384,10 +384,10 @@ export default function WorldMapSection() {
                           y={loc.y - 21}
                           textAnchor="middle"
                           fill="#E9E4DC"
-                          fontFamily="Cormorant Garamond, Georgia, serif"
-                          fontSize="9.5"
+                          fontFamily="'Plus Jakarta Sans', sans-serif"
+                          fontSize="9"
                           letterSpacing="0.8"
-                          fontWeight="400"
+                          fontWeight="500"
                         >
                           {loc.name.toUpperCase()}
                         </text>

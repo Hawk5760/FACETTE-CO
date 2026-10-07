@@ -59,7 +59,7 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col items-start">
-            <span className="font-serif text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-xl font-light uppercase tracking-[0.2em] sm:tracking-[0.25em] xl:tracking-[0.3em] leading-tight text-[#E9E4DC] group-hover:text-[#D5B581] transition-colors whitespace-nowrap drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+            <span className="font-cinzel text-sm sm:text-base lg:text-base xl:text-lg 2xl:text-xl font-medium uppercase tracking-[0.25em] sm:tracking-[0.3em] leading-tight text-[#E9E4DC] group-hover:text-[#D5B581] transition-colors whitespace-nowrap drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
               FACETTE &amp; CO
             </span>
             <span className="text-[7.5px] sm:text-[8px] xl:text-[9px] tracking-[0.25em] sm:tracking-[0.3em] xl:tracking-[0.35em] text-[#D5B581]/90 uppercase font-sans font-light whitespace-nowrap drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
@@ -69,7 +69,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6 2xl:gap-8 text-[11px] xl:text-[12px] font-sans tracking-[0.12em] xl:tracking-[0.16em] uppercase text-[#E9E4DC] font-normal mx-2 xl:mx-4">
+        <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6 2xl:gap-8 text-[11px] xl:text-[12px] font-sans tracking-[0.15em] uppercase text-[#E9E4DC] font-medium mx-2 xl:mx-4">
           {/* Gemstones with hover dropdown */}
           <div
             className="relative"

@@ -169,62 +169,6 @@ export default function ScrollImageHero() {
     };
   };
 
-  // Text transition styles for each slide
-  const getTextStyles = (index) => {
-    let opacity = 0;
-    let translateY = 20;
-
-    if (index === 0) {
-      if (smoothProgress < 0.22) {
-        opacity = 1;
-        translateY = 0;
-      } else if (smoothProgress <= 0.4) {
-        const factor = (smoothProgress - 0.22) / 0.18;
-        opacity = Math.max(0, 1 - factor);
-        translateY = -24 * factor;
-      } else {
-        opacity = 0;
-        translateY = -24;
-      }
-    } else if (index === 1) {
-      if (smoothProgress < 0.26) {
-        opacity = 0;
-        translateY = 24;
-      } else if (smoothProgress <= 0.42) {
-        const factor = (smoothProgress - 0.26) / 0.16;
-        opacity = Math.min(1, factor);
-        translateY = 24 * (1 - factor);
-      } else if (smoothProgress < 0.6) {
-        opacity = 1;
-        translateY = 0;
-      } else if (smoothProgress <= 0.74) {
-        const factor = (smoothProgress - 0.6) / 0.14;
-        opacity = Math.max(0, 1 - factor);
-        translateY = -24 * factor;
-      } else {
-        opacity = 0;
-        translateY = -24;
-      }
-    } else if (index === 2) {
-      if (smoothProgress < 0.62) {
-        opacity = 0;
-        translateY = 24;
-      } else if (smoothProgress <= 0.78) {
-        const factor = (smoothProgress - 0.62) / 0.16;
-        opacity = Math.min(1, factor);
-        translateY = 24 * (1 - factor);
-      } else {
-        opacity = 1;
-        translateY = 0;
-      }
-    }
-
-    return {
-      opacity,
-      transform: `translateY(${translateY}px) translateZ(0)`,
-      pointerEvents: opacity > 0.4 ? 'auto' : 'none',
-    };
-  };
 
   return (
     <div
@@ -251,7 +195,7 @@ export default function ScrollImageHero() {
                 <img
                   src={slide.image}
                   alt={slide.alt}
-                  className="w-full h-full object-cover object-center filter brightness-[0.88] contrast-[1.05]"
+                  className="w-full h-full object-cover object-center filter blur-[2.5px] scale-[1.03] brightness-[0.84] contrast-[1.04]"
                   style={{
                     transform: styles.transform,
                     transition: 'transform 80ms ease-out',
@@ -263,7 +207,8 @@ export default function ScrollImageHero() {
           })}
         </div>
 
-        {/* Layer 2: Subtle Cinematic Vignettes & Luxury Emerald Grading */}
+        {/* Layer 2: Subtle Cinematic Vignettes, Depth of Field & Luxury Grading */}
+        <div className="absolute inset-0 backdrop-blur-[1px] bg-black/20 pointer-events-none z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#090C0E] via-[#090C0E]/20 to-transparent pointer-events-none z-10" />
         <div className="absolute inset-0 bg-radial from-transparent via-[#090C0E]/20 to-[#090C0E]/85 pointer-events-none z-10" />
         <div className="absolute inset-0 bg-[#0E3D3D]/10 mix-blend-overlay pointer-events-none z-10" />
@@ -292,44 +237,43 @@ export default function ScrollImageHero() {
           </div>
         </div>
 
-        {/* Center Editorial Headlines — Synchronized Crossfade with Lerp */}
-        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-8 md:px-12 text-center my-auto w-full">
-          {slides.map((slide, index) => {
-            const styles = getTextStyles(index);
-            return (
-              <div
-                key={slide.id}
-                className="absolute inset-0 flex flex-col items-center justify-center transition-all duration-300 ease-out px-4"
-                style={styles}
-              >
-                {/* Eyebrow Badge */}
-                <div className="inline-flex items-center gap-2 mb-3 sm:mb-4 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#090C0E]/80 border border-[#D5B581]/35 backdrop-blur-md shadow-2xl">
-                  <span className="text-[9px] sm:text-[11px] font-sans tracking-[0.3em] text-[#D5B581] uppercase font-semibold">
-                    {slide.eyebrow}
-                  </span>
-                  <span className="text-[#D5B581]/40 text-xs">•</span>
-                  <span className="text-[8px] sm:text-[10px] font-sans tracking-[0.2em] text-[#E9E4DC]/80 uppercase">
-                    {slide.badge}
-                  </span>
-                </div>
+        {/* Center Editorial Headlines — Exact Copy from PDF 1, Page 3 */}
+        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-8 md:px-12 text-center my-auto w-full select-none">
+          {/* Eyebrow: MATERIAL • DESIGN • CRAFT */}
+          <div className="inline-flex items-center gap-2 mb-3 sm:mb-4 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[#090C0E]/80 border border-[#D5B581]/35 backdrop-blur-md shadow-2xl">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D5B581] animate-pulse" />
+            <span className="text-[9px] sm:text-[11px] font-sans tracking-[0.3em] text-[#D5B581] uppercase font-semibold">
+              MATERIAL &bull; DESIGN &bull; CRAFT
+            </span>
+          </div>
 
-                {/* Monumental Hero Headline */}
-                <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-light text-[#E9E4DC] leading-[1.08] sm:leading-[1.02] uppercase tracking-tight max-w-4xl mx-auto drop-shadow-2xl">
-                  {slide.title}
-                </h1>
+          {/* Headline: WHERE MATERIAL BECOMES POSSIBILITY. */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-light text-[#E9E4DC] leading-[1.08] sm:leading-[1.03] uppercase tracking-[0.12em] sm:tracking-[0.15em] max-w-5xl mx-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
+            WHERE MATERIAL <br />
+            <span className="italic text-[#D5B581] font-normal">BECOMES POSSIBILITY.</span>
+          </h1>
 
-                {/* Editorial Subtitle */}
-                <p className="mt-3 sm:mt-5 text-xs sm:text-base md:text-lg text-[#D6D5D0]/90 font-light max-w-2xl mx-auto leading-relaxed drop-shadow-md px-2">
-                  {slide.subtitle}
-                </p>
+          {/* Supporting sentence */}
+          <p className="mt-3 sm:mt-5 text-xs sm:text-base md:text-lg text-[#E9E4DC]/95 font-sans font-light max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] px-2">
+            Exceptional materials, considered design and precise execution &mdash; created for those who imagine beyond the ordinary.
+          </p>
 
-                {/* Technical / Origin Metadata Label */}
-                <div className="mt-4 sm:mt-6 text-[9px] sm:text-[10px] font-mono tracking-[0.2em] text-[#D5B581]/75 uppercase bg-[#090C0E]/60 px-3 py-1 rounded border border-[#D5B581]/15">
-                  {slide.metadata}
-                </div>
-              </div>
-            );
-          })}
+          {/* Small supporting line: GEMSTONES · DESIGN & MANUFACTURING · FASHION HARDWARE · CORPORATE GIFTING */}
+          <div className="mt-4 sm:mt-6 inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-[8.5px] sm:text-[10px] md:text-[11px] font-sans tracking-[0.2em] sm:tracking-[0.25em] text-[#D5B581] uppercase bg-[#090C0E]/75 px-3.5 sm:px-5 py-1.5 rounded border border-[#D5B581]/25 backdrop-blur-sm shadow-lg">
+            <span>GEMSTONES</span>
+            <span className="text-[#D5B581]/40">&bull;</span>
+            <span>DESIGN &amp; MANUFACTURING</span>
+            <span className="text-[#D5B581]/40">&bull;</span>
+            <span>FASHION HARDWARE</span>
+            <span className="text-[#D5B581]/40">&bull;</span>
+            <span>CORPORATE GIFTING</span>
+          </div>
+
+          {/* Subtle Live Transformation Context Badge */}
+          <div className="mt-3 sm:mt-4 text-[8px] sm:text-[9.5px] font-sans tracking-[0.22em] text-[#D6D5D0]/60 uppercase">
+            <span>TRANSFORMATION &bull; STAGE {activeIndex + 1} OF 3: </span>
+            <span className="text-[#D5B581] font-medium">{slides[activeIndex].stepName}</span>
+          </div>
         </div>
 
         {/* Bottom Interactive Controls & Stage Stepper */}

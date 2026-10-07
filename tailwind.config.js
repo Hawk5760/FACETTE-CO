@@ -20,8 +20,9 @@ export default {
         }
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Didot', 'Bodoni MT', 'Cinzel', 'Georgia', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        serif: ['"Cormorant Garamond"', 'Didot', '"Bodoni Moda"', 'Georgia', 'serif'],
+        sans: ['"Montserrat"', 'Lato', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        cinzel: ['"Cinzel"', '"Cormorant Garamond"', 'serif'],
       },
       backgroundImage: {
         'gradient-emerald': 'linear-gradient(135deg, #0E3D3D 0%, #05624C 100%)',
@@ -29,6 +30,7 @@ export default {
         'gradient-dark': 'linear-gradient(180deg, #090C0E 0%, #0E1318 50%, #090C0E 100%)',
       },
       letterSpacing: {
+        luxury: '0.15em',
         widest: '.2em',
         ultra: '.25em',
       }
